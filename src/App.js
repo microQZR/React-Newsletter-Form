@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+
+import classes from "./App.module.css";
+import Button from "./components/Button";
+import Newsletter from "./components/Newsletter";
 
 function App() {
+  const [showNewsletter, setShowNewsletter] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className={`flex-column ${classes.main}`}>
+      <h1>SIA INNOVATIONS</h1>
+      <Button className={classes.btn} buttonStyle="outline" onClick={() => setShowNewsletter(true)}>
+        Show Subscription Form
+      </Button>
+      {showNewsletter && <Newsletter closeHandler={() => setShowNewsletter(false)} />}
+    </main>
   );
 }
 
