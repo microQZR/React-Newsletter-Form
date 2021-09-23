@@ -9,7 +9,7 @@ function App() {
 
   return (
     <main className={`flex-column ${classes.main}`}>
-      <h1>SIA INNOVATIONS</h1>
+      <h1>YOUR COMPANY INC.</h1>
       <Button className={classes.btn} buttonStyle="outline" onClick={() => setShowNewsletter(true)}>
         Show Subscription Form
       </Button>
